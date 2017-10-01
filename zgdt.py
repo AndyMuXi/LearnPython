@@ -58,7 +58,7 @@ def downzgdt(url,website):
 
             #分析二级目录
             soup_new = BeautifulSoup(html_new_doc, 'html.parser' ,from_encoding='UTF-8')
-            link_article = soup_new.find('div', id='vsb_content')
+            link_article = soup_new.find('div', id=re.compile(r'vsb_content'))
             link_img = soup_new.find_all('img', src = re.compile(r"media"))
 
             #保存文章
